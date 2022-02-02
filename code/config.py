@@ -25,11 +25,11 @@ class Exercise:
 		self.min_reps = min_reps
 		self.max_reps = max_reps
 		# vvv weight_arr is initialized here vvv
-		#self.__get_weight_per_set()
+		#self.prompt_weight_per_set()
 		# Don't want to init here, only when we log
 
 	# Exercise-Specific Functions(getting weight amts, etc.; privated for now):
-	def __get_weight_per_set(self):
+	def prompt_weight_per_set(self):
 		self.weight_arr = [None] * self.num_sets
 		print('What was the total weight for...')
 		for i in range(self.num_sets):
@@ -65,7 +65,7 @@ class Exercise:
 	def __get_max_reps(self):
 		return self.max_reps
 
-	def __set_weight_arr(self):
+	def __get_weight_arr(self):
 		return self.weight_arr
 ################################################################################
 
