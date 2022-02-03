@@ -12,38 +12,92 @@ import config as c
 
 ## TODO: Make the workout logger auto-cycle through the ppl cycle
 
-
-# Set the Starting Date:
+################################################################################
+# Workout Plan Start Date Setter -- ONLY FOR INITIALIZATION USE
+################################################################################
 def set_start_date():
     start_date = dt.date(c.starting_date_year, c.starting_date_month, c.starting_date_day)
 
+################################################################################
+
+
+################################################################################
+# Current Date Setter -- USED WITH LOGGING
+################################################################################
+def set_date_for_workout():
+    today = dt.date.today()
+    return today
+
+################################################################################
+
+
+################################################################################
+# Builds Database of Persistent Storage
+################################################################################
 def build_database():
     pass
+    # Persistent Storage Needs...
+    #   - A Workout Object with the key of a Datetime object for the day of the workout
+    #   - The Index of the Workout in the split, so the next day the program knows what the next Workout is
+    # Use...
+    #   - A Text Document?
+    #   - Excel/CSV?
+    #   - NoSQL Database?
 
+################################################################################
+
+
+################################################################################
+# Workout Plan Builder -- ONLY FOR INITIALIZATION USE
+################################################################################
 def build_workouts(w):
-# TODO: build the workout Object using w(the json)
+    # Create an Empty List of Workout Objects
     workout_list = [None] * len(w)
-    for i in w: # For all the workouts:
-        temp_name = i
-        temp_num_exercises = len(w[i])
-        temp_exercise_list = [None] * len(w[i])
+
+    # Loop Through the Workouts
+    for i in w:
+        # Parameters for the Workout Object
+        temp_name = i # Name of the Workout
+        temp_num_exercises = len(w[i]) # Number of Exercises
+        temp_exercise_list = [None] * len(w[i]) # The Exercise List that will be filled below
+
+        # Loop Through The Exercises in the Workout
         for x in range(len(w[i])):
             # Create a Temp Variable of the Dictionary Version of the Exercise
             temp_e = w[i][str(x+1)]
+
             # Create the Exercise;
             temp_add_to_list = c.Exercise(temp_e['name'], temp_e['sets'], temp_e['min_reps'], temp_e['max_reps'])
+
             # Add the Exercise Object to the List:
             temp_exercise_list[x] = temp_add_to_list
 
-        # Now Build the Workout Object
+        # Exit Inner For Loop, go to next workout or exit
+
+        # Create the Workout Object
         temp_workout = c.Workout(temp_name, temp_num_exercises, temp_exercise_list)
-        workout_list[i] = temp_workout
+        # Add the Workout to the List of Workouts
+        workout_list[i] = temp_workout]
+    # Exit Outer For Loop
+
     return workout_list
 
-# Main Code:
+################################################################################
 
 
-# Testing Class Stuff:
+################################################################################
+# MAIN CODE:
+################################################################################
 
-x = c.Exercise('lift', 3, 8, 10)
-build_workouts(c.workouts)
+# Check to ensure the user wants to reset their workout plan
+is_init_happening = input('This is the Initialization Mode. Restart your Workout? y/n:')
+
+# Check User Input:
+if is_init_happening == 'y' or is_init_happening == 'Y' or is_init_happening == 'yes' or is_init_happening == 'YES' or is_init_happening == 'Yes':
+    continue
+else:
+    exit()
+
+
+
+################################################################################

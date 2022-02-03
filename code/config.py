@@ -166,6 +166,7 @@ workouts = { 'Push Day 1' :
 					'14' 	:	{'name':'Single Leg Calf Raise','sets':3,'min_reps':15,'max_reps':20},
 					'15' 	:	{'name':'Weighted L-Sit Hold(to Failure)','sets':3,'min_reps':-1,'max_reps':-1},
 					'16' 	:	{'name':'ATG Lunges','sets':3,'min_reps':10,'max_reps':12},
-				}
+				},
+			'Rest' : {}
 			}
 ################################################################################
