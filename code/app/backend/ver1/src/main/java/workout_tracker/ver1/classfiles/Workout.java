@@ -13,7 +13,7 @@ public class Workout
         this.exercise_list = exercise_list;
     }
 
-    //Getters:
+    // Getters:
     public String get_name()
     {
         return name;
@@ -29,7 +29,7 @@ public class Workout
         return exercise_list;
     }
 
-    //Setters:
+    // Setters:
     public void set_name(String name)
     {
         this.name = name;
@@ -39,7 +39,7 @@ public class Workout
     {
         this.num_exercises = num_exercises;
     }
-    
+
     public void set_exercise_list(Exercise[] exercise_list)
     {
         this.exercise_list = exercise_list;
