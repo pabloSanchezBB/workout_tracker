@@ -55,6 +55,7 @@ def build_workouts(w):
     workout_list = [None] * len(w)
 
     # Loop Through the Workouts
+    index = 0
     for i in w:
         # Parameters for the Workout Object
         temp_name = i # Name of the Workout
@@ -77,13 +78,26 @@ def build_workouts(w):
         # Create the Workout Object
         temp_workout = c.Workout(temp_name, temp_num_exercises, temp_exercise_list)
         # Add the Workout to the List of Workouts
-        workout_list[i] = temp_workout]
+        workout_list[index] = temp_workout
+        index += 1
     # Exit Outer For Loop
 
     return workout_list
 
 ################################################################################
 
+
+################################################################################
+# Functions to Pull the Workout from the List as a Test
+################################################################################
+def print_workouts(workout_list):
+    for i in range(len(workout_list)):
+        print(str(i+1) + '. ' + str(workout_list[i].get_name()))
+
+def get_workout_from_list(workout_list, workout_num):
+    return workout_list[workout_num - 1]
+
+################################################################################
 
 ################################################################################
 # MAIN CODE:
@@ -94,10 +108,24 @@ is_init_happening = input('This is the Initialization Mode. Restart your Workout
 
 # Check User Input:
 if is_init_happening == 'y' or is_init_happening == 'Y' or is_init_happening == 'yes' or is_init_happening == 'YES' or is_init_happening == 'Yes':
-    continue
+    build_database()
+    workouts = build_workouts(c.workouts)
+
+    ##########################################################
+    # This is Just for Testing until the Storage is Done:
+    ##########################################################
+    print_workouts(workouts)
+    user_in = int(input('Which Workout Do You Want to Use?\t'))
+    desired_workout = get_workout_from_list(workouts, user_in)
+
+    exercises = desired_workout.get_exercise_list()
+    for e in range(len(exercises)):
+        print('\nExercise ' + str(e+1) + ': ' + str(exercises[e].get_name()))
+        exercises[e].prompt_weight_per_set()
+
+    ##########################################################
+
 else:
     exit()
-
-
 
 ################################################################################

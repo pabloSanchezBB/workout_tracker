@@ -12,6 +12,29 @@ class Workout:
 	def build_workout(self):
 		pass
 
+	# Setters:
+	def __set_name(self, name):
+		self.name = name
+		return
+
+	def __set_num_exercises(self, num_exercises):
+		self.num_exercises = num_exercises
+		return
+
+	def __set_exercise_list(self, exercise_list):
+		self.exercise_list = exercise_list
+		return
+
+	# Getters:
+	def get_name(self):
+		return self.name
+
+	def __get_num_exercises(self):
+		return self.num_exercises
+
+	def get_exercise_list(self):
+		return self.exercise_list
+
 ################################################################################
 
 
@@ -39,21 +62,26 @@ class Exercise:
 	# Setters(defaulted to private unless necessary):
 	def __set_name(self, name):
 		self.name = name
+		return
 
 	def __set_num_sets(self, num_sets):
 		self.num_sets = num_sets
+		return
 
 	def __set_min_reps(self, min_sets):
 		self.min_sets = min_sets
+		return
 
 	def __set_max_reps(self, max_reps):
 		self.max_reps = max_reps
+		return
 
 	def __set_weight_arr(self, weight_arr):
 		self.weight_arr = weight_arr
+		return
 
 	# Getters(defaulted to private unless necessary):
-	def __get_name(self):
+	def get_name(self):
 		return self.name
 
 	def __get_num_sets(self):
