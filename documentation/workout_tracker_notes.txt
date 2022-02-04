@@ -1,0 +1,27 @@
+Workout Tracker App Plan:
+
+- Platform: Google Flutter for both iOS and Android
+- Database: NoSQL, good for scalability
+
+- App UI:
+	- Main Screen:
+		- Create Workout Button
+		- Log Workout Button
+		- View Past Workouts Button
+		- View Analytics Button
+		- Goals Button
+		
+	- Create Workout Screen(TODO)
+		- Text Entry for Exercise Name
+		- Text Entry for # of Sets
+		- Check Box for Failure
+		- Text Entry for Min Reps
+		- Text Entry for Max Reps
+		- Check Box for Superset
+		- Check Box for Drop Set
+		
+	- Log Workout Screen(TODO)
+	- View Past Workouts Screen(TODO)
+	- View Analytics Screen(TODO)
+	- Goals Screen(TODO)
+	
