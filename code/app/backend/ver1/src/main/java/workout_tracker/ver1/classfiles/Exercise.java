@@ -16,7 +16,7 @@ public class Exercise
         this.max_reps = max_reps;
         this.weight_per_set = new int[num_sets];
 
-        for(int i;i<this.weight_per_set.length;++i) {
+        for(int i=0;i<this.weight_per_set.length;++i) {
             set_weight_per_set(i, 0/*Change this to the User Input*/);
         }
     }
@@ -76,5 +76,6 @@ public class Exercise
             e.printStackTrace();
         }
 
+        return -1;
     }
 }

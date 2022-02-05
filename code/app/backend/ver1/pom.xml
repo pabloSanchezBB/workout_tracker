@@ -22,6 +22,14 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.3.15</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -57,5 +65,17 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
+
+	<project>
+		<!--- others lines -->
+		<pluginRepositories>
+			<pluginRepository>
+				<id>repository.spring.release</id>
+				<name>Spring GA Repository</name>
+				<url>https://repo.spring.io/plugins-release/</url>
+			</pluginRepository>
+		</pluginRepositories>
+	</project>
 
 </project>
